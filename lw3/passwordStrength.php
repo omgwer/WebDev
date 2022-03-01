@@ -12,7 +12,9 @@
 //Например: abcd1a, вычитаем -2 по скольку символ a встречается дважды. Программа должна выводить на экран надежность пароля в виде числа.
 //случае, если в каком-то из правил n=0, то расчёт для этого правила не производится.
 
-$inputString = $_GET['password'];
+$inputString = !empty($_GET['password']) ? $_GET['password'] : '';
+
+echo 'Password strength = ' . checkResult($inputString);
 
 function initArray($inputString): array  // инициализируем массив описывающий состояние строки для последующей обработки
 {
@@ -25,36 +27,50 @@ function initArray($inputString): array  // инициализируем мас�
         "countRepeatedSymbols" => 0
     ];
 
-    for ($i = 0; $i < strlen($inputString); $i++) {            // считаем количество Lower and upper symbols, так же готовим строку символов для проверки повторяющихся значений
+    for ($i = 0; $i < strlen($inputString); $i++) {
         if (is_numeric($inputString[$i])) {
-            $initArray['counterSymbols']++;
-        } elseif (ctype_alpha($inputString[$i])) {
             $initArray['counterDigits']++;
+        } elseif (ctype_alpha($inputString[$i])) {
+            $initArray['counterSymbols']++;
             $symbolsString = $symbolsString . $inputString[$i];
         }
     }
-
+// переименовать переменную counterSymbols
     if ($initArray['counterSymbols'] != 0) {                     // считаем количество lower and upper symbols
         for ($i = 0; $i < strlen($inputString); $i++) {
             if (ctype_upper($inputString[$i])) {
                 $initArray['counterUpperCaseSymbols']++;
-            } else {
+            } elseif (ctype_lower($inputString[$i])) {
                 $initArray['counterLowerCaseSymbols']++;
             }
         }
     }
 
-    foreach (count_chars($symbolsString, 1) as $i => $val) {      // на выходе функции массив вида symbol => quantity, если количество >= 2 добавляем кол-во в countRepeatedSymbols
+    foreach (count_chars($inputString, 1) as $i => $val) {      // на выходе функции массив вида symbol => quantity, если количество >= 2 добавляем кол-во в countRepeatedSymbols
         if ($val >= 2) {
             $initArray['countRepeatedSymbols'] += $val;
         }
     }
+
+    $initArray['counterSymbols'] = strlen($inputString);
     return $initArray;
 }
 
-function checkResult($inputString): int{              // описываем логику работы с инициализированным массивом
+function checkResult($inputString): int
+{              // описываем логику работы с инициализированным массивом
     $initializedArray = initArray($inputString);
     $result = 0;
+    $symbolsCount = 0;
+
+    for ($i = 0; $i < strlen($inputString); $i++) {
+        if (ctype_alpha($inputString[$i])) {
+            $symbolsCount++;
+        }
+    }
+
+    foreach ($initializedArray as $i => $val) {
+        echo $i . $val . "\n";
+    }
 
     foreach ($initializedArray as $i => $val) {                     //пробегаем по массиву
         if ($val != 0) {
@@ -66,7 +82,7 @@ function checkResult($inputString): int{              // описываем ло
         }
     }
 
-    if (($initializedArray['counterDigits'] == 0) xor ($initializedArray['counterSymbols'] == 0)) {    // исключающее или, если один из параметров true
+    if (($initializedArray['counterDigits'] == 0) xor ($symbolsCount == 0)) {    // исключающее или, если один из параметров true
         $result = $result - strlen($inputString);
     }
 
@@ -76,4 +92,3 @@ function checkResult($inputString): int{              // описываем ло
     return $result;
 }
 
-echo 'Password strength = ' . checkResult($inputString);
