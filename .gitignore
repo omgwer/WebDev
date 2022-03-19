@@ -1,2 +1,4 @@
 *.exe
 *\.idea
+lw5/node_modules
+lw5/dist
