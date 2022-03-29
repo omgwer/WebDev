@@ -30,25 +30,7 @@ input:-webkit-autofill:active
 
 .font
 {
-  &-title
-  {
-    &__large
-    {
-
-    }
-
-    &__normal
-    {
-
-    }
-
-    &__small
-    {
-
-    }
-  }
-
-  &-text
+   &-text
   {
     &__large
     {
@@ -69,6 +51,7 @@ input:-webkit-autofill:active
 
       &_white
       {
+        font: 500 16px/1.2 'Montserrat', sans-serif;
         color: #fff;
       }
     }

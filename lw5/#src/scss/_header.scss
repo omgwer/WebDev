@@ -3,13 +3,13 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  max-width: 1680px;
+  max-width: 1707px;
   margin: 30px auto 0;
   align-items: center;
 
   &__logo
   {
-    margin: 0 35px 0 25px;
+    margin: 0 35px 0 24px;
     flex-shrink: 0;
   }
 
@@ -37,7 +37,7 @@
   {
     position: relative;
     z-index: 1;
-    margin-right: 25px;
+    margin-right: 5px;
     display: flex;
     justify-content: space-between;
     width: 815px;
@@ -63,6 +63,7 @@
 
 .link
 {
+  padding-top: 1px;
   text-decoration: none;
   vertical-align: middle;
 
@@ -70,12 +71,17 @@
   {
     border-bottom: 1px solid #383838;
   }
+
+  &_about-author
+  {
+    width: 63px;
+  }
 }
 
 .button_black
 {
   background-color: #05090C;
-  padding: 19px 40px;
+  padding: 18px 42px;
   border-radius: 5px;
   text-decoration: none;
 
