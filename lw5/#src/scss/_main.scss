@@ -9,7 +9,6 @@
   &__block
   {
     position: relative;
-    width: 745px;
     margin: 180px 0 0 15px;
   }
 
@@ -44,25 +43,15 @@
   }
 }
 
-.main__title-course
-{
-  margin: 43px auto 0;
-}
-
 .font-color_pink
 {
   color: #EE58B6;
   font-style: normal;
 }
 
-.main__tags-list
-{
-  margin: 0 auto;
-}
-
 .tags-list
 {
-  margin-top: 70px;
+  margin: 70px auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 337px));
   background-color: #000;
@@ -124,6 +113,7 @@
 .content
 {
   max-width: 1175px;
+  margin: 73px auto 0;
 
   &__image
   {
@@ -179,11 +169,6 @@
     width: 574px;
     font: 18px/1.4 'Roboto Condensed', sans-serif;
   }
-}
-
-.main__content
-{
-  margin: 73px auto 0;
 }
 
 .row-block
