@@ -123,6 +123,7 @@
     &__title
     {
       margin-bottom: 0;
+      text-align: center;
     }
 
     &__image
@@ -141,15 +142,16 @@
     {
       margin: 0 auto;
     }
-  }
 
-  .content__block
-  {
-    flex-wrap: wrap-reverse;
-
-    &:last-child
+    &__block
     {
-      flex-wrap: wrap;
+      flex-wrap: wrap-reverse;
+      gap: 0;
+
+      &:last-child
+      {
+        flex-wrap: wrap;
+      }
     }
   }
 
@@ -216,11 +218,6 @@
   {
     grid-gap: 0;
 
-    &__box
-    {
-      width: 290px;
-    }
-
     &__description
     {
       margin: 10px auto 0;
@@ -228,7 +225,7 @@
   }
 }
 
-@media screen and (max-width: 1030px)
+@media screen and (max-width: 1060px)
 {
   .tags-list
   {
@@ -402,11 +399,7 @@
     &__description
     {
       width: auto;
-    }
-
-    &__text
-    {
-      margin-left: 10px;
+      text-align: center;
     }
   }
 }
