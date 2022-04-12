@@ -67,7 +67,7 @@
 
   &__job-block {
     vertical-align: middle;
-    background-color: #ffffff;
+    background-color: #fff;
   }
 
   &__group {
@@ -108,7 +108,7 @@
 
   &__submit {
     margin: 0 auto 92px;
-    background-color: #000000;
+    background-color: #000;
     color: #ffffff;
     font: 600 18px/22px 'Montserrat', sans-serif;
     border-radius: 5px;
@@ -121,17 +121,14 @@
 
   &__job-list,
   &__job-block{
-    font: 500 18px/22px 'Montserrat', sans-serif;
-    color: #999999;
+    font: 500 18px/1.2 'Montserrat', sans-serif;
+    color: #999;
   }
 
   &__name::placeholder,
   &__email::placeholder {
-    font: 500 18px/22px 'Montserrat', sans-serif;
-    color: #999999;
-  }
-
-  &__container {
+    font: 500 18px/1.2 'Montserrat', sans-serif;
+    color: #999;
   }
 
   &__name:invalid,

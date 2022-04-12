@@ -5,6 +5,7 @@
   justify-content: space-between;
   margin: 43px auto 0;
   max-width: 1580px;
+  padding: 0;
 
   &__block
   {
@@ -14,7 +15,7 @@
 
   &__header
   {
-    font: 600 100px/1.22 'Montserrat', sans-serif;
+    font: 600 80px/1.22 'Montserrat', sans-serif;
     margin: 0 0 15px 2px;
   }
 
@@ -26,10 +27,10 @@
 
   &__description
   {
-    font: 400 26px/1.18 'Roboto Condensed', sans-serif;
+    font: 400 22px/1.18 'Roboto Condensed', sans-serif;
     color: rgba(0, 0, 0, 0.7);
     margin: 21px 0 64px 2px;
-    max-width: 545px;
+    max-width: 500px;
   }
 
   &__image
@@ -39,7 +40,7 @@
     height: 661px;
     background-size: cover;
     top: 18px;
-    left: 15px;
+    left: 0;
   }
 }
 

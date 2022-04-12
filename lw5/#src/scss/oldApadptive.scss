@@ -1,106 +1,51 @@
-//@media screen and (min-width: 330px)
-//{
-//  padding: 0 20px;
-//}
-//
-//@media screen and (min-width: 1660px)
-//{
-//  .title-course
-//  {
-//    &__image
-//    {
-//      left: 15px;
-//    }
-//  }
-//}
-//
-//@media screen and (min-width: 1550px)
-//{
-//  .title-course
-//  {
-//    &__header
-//    {
-//      font-size: 100px;
-//    }
-//
-//    &__description
-//    {
-//      font-size: 26px;
-//      max-width: 545px;
-//    }
-//  }
-//}
-//
-//@media screen and (min-width: 1460px)
-//{
-//  .feedback-form
-//  {
-//    &__fieldspace
-//    {
-//      margin: 0 auto;
-//    }
-//
-//    &__submit
-//    {
-//      margin: 10px auto;
-//    }
-//  }
-//
-//  .block-faq
-//  {
-//    padding-bottom: 25px;
-//  }
-//}
+@media screen and (max-width: 1660px)
+{
+  .title-course
+  {
+    &__image
+    {
+      left: 0;
+    }
+  }
+}
 
-///old
-//@media screen and (max-width: 1660px)
-//{
-//  .title-course
-//  {
-//    &__image
-//    {
-//      left: 0;
-//    }
-//  }
-//}
-//
-//@media screen and (max-width: 1550px)
-//{
-//  .title-course
-//  {
-//    &__header
-//    {
-//      font-size: 80px;
-//    }
-//
-//    &__description
-//    {
-//      font-size: 22px;
-//      max-width: 500px;
-//    }
-//  }
-//}
+@media screen and (max-width: 1550px)
+{
+  .title-course
+  {
+    &__header
+    {
+      font-size: 80px;
+    }
 
-//@media screen and (max-width: 1460px)
-//{
-//  .feedback-form
-//  {
-//    &__fieldspace
-//    {
-//      margin: 0 auto;
-//    }
-//
-//    &__submit
-//    {
-//      margin: 10px auto;
-//    }
-//  }
-//
-//  .block-faq
-//  {
-//    padding-bottom: 25px;
-//  }
-//}
+    &__description
+    {
+      font-size: 22px;
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 1460px)
+{
+  .feedback-form
+  {
+    &__fieldspace
+    {
+      margin: 0 auto;
+    }
+
+    &__submit
+    {
+      margin: 10px auto;
+    }
+  }
+
+  .block-faq
+  {
+    padding-bottom: 25px;
+  }
+}
 
 @media screen and (max-width: 1300px)
 {
@@ -715,5 +660,13 @@
     {
       width: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 330px)
+{
+  .title-course
+  {
+    padding: 0;
   }
 }
