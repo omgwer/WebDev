@@ -1,0 +1,4 @@
+user-email = hersgory2134@gmail.com
+ user-name = asda 
+user-category = prog
+ spam-approve = on
