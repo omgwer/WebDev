@@ -14,8 +14,8 @@ function validateNumber(number) {
     if (Number.isInteger(number)) {
       return true;
     } else {
-      console.log(number + 'Дробное');
-      return false;
+      //console.log(number + 'Дробное'); // need float numbers ??
+      return true;
     }
   } else {
     console.log(number + 'Не число');
@@ -57,20 +57,16 @@ function getLastIndexOperand(string) {
 */
 function getOperationResult(operation, firstOperand, secondOperand)
 {
-    if (operation != 'error' && validateNumber(firstOperand) || validateNumber(secondOperand)) {
+    if (operation != 'error' && validateNumber(firstOperand) && validateNumber(secondOperand)) {
         switch (operation) {
           case '+':
             return firstOperand + secondOperand;
-            break;
           case '-':
             return firstOperand - secondOperand;
-            break;
           case '*':
             return firstOperand * secondOperand;
-            break;
           case '/':
-            return firstOperand / secondOperand;
-            break;
+            return (secondOperand == 0) ? "Error, divisin by zero!" : firstOperand / secondOperand;
         }
       } else {
           return 'Error!';
@@ -112,5 +108,5 @@ function getSecondOperand(string)
     return secondOperand;
 }
 
-let testString = '+(-(+(- 1243 233) 22) 3) (* 55 25)';
+let testString = '+(-(+(/ 1243 2) 22) 3) (* 55 25)';
 console.log(calc(testString));
