@@ -1,4 +1,0 @@
-user-email = testspan@ya.ru
- user-name = as 
-user-category = prog
- spam-approve = on

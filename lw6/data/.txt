@@ -1,4 +1,0 @@
-user-email = 
- user-name =  
-user-category = 
- spam-approve = 

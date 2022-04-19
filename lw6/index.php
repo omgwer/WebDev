@@ -220,7 +220,6 @@
                 Записаться на курс
             </h2>
         <?php include 'form.php' ?>
-
         </div>
     </section>
 </div>

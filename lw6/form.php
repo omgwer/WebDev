@@ -1,29 +1,4 @@
-<?php
-$user_name = "";
-$user_email = "";
-$category = "";
-$spam_approve = "";
-
-if ($_GET)
-{
-    $user_name = $_GET['user_name'];
-    $user_email = $_GET['user_email'];
-    $category = $_GET['category'];
-    $spam_approve = $_GET['spam_approve'];
-
-    function writeToFile($user_email, $user_name, $category, $spam_approve)
-    {
-        $fileName = 'data/' . strtolower($user_email) . '.txt';
-        $dateString = "user-email = " .$user_email . "\n\r " . "user-name = " . $user_name . " \n\r" . "user-category = " . $category . "\n\r " . "spam-approve = " . $spam_approve;
-        file_put_contents($fileName, $dateString, FILE_USE_INCLUDE_PATH);
-    }
-
-    writeToFile($user_email, $user_name, $category, $spam_approve);
-}
-?>
-
-
-<form id="validate" method="get" action="form.php" class="feedback-form feedback-block__feedback-form">
+<form id="validate" method="post" action="saveData.php" target="_blank" class="feedback-form feedback-block__feedback-form">
     <div class="feedback-form__fieldspace">
         <label class="feedback-form__group">
             <input class="feedback-form__name"
@@ -95,7 +70,7 @@ if ($_GET)
             </label>
         </div>
     </div>
-    <input class="feedback-form__submit" formmethod="get" type="submit" value="Записаться на курс">
+    <input class="feedback-form__submit" formmethod="post" type="submit" value="Записаться на курс">
 </form>
 
 

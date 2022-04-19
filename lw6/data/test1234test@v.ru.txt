@@ -1,4 +1,4 @@
-user-email = hersgory2134@gmail.com
+user-email = test1234test@v.ru
  user-name = asda 
 user-category = prog
  spam-approve = on
