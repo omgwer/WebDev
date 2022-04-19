@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
   setMenuScrollNavigation();
   initPopup();
   initMobileMenu();
-  //validationForm();
+  validationForm();
   customDropList();
   setAccordionBlockHide();
   smoothAccordionSlide();

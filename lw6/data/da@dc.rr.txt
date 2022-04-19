@@ -1,0 +1,4 @@
+user-email = da@dc.rr
+ user-name = asdasd 
+user-category = mark
+ spam-approve = on

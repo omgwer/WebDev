@@ -825,12 +825,12 @@ input:-webkit-autofill:active {
   color: #999;
 }
 
-.feedback-form__name:invalid,
-.feedback-form__email:invalid {
-  -webkit-box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
-          box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
-  border: 1px solid rgba(224, 14, 14, 0.62);
-}
+/*.feedback-form__name:invalid,*/
+/*.feedback-form__email:invalid {*/
+/*  -webkit-box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);*/
+/*          box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);*/
+/*  border: 1px solid rgba(224, 14, 14, 0.62);*/
+/*}*/
 
 .feedback-form__container:checked {
   -webkit-box-shadow: 0 0 10px 1px #ee75c1;
@@ -1012,7 +1012,7 @@ input:-webkit-autofill:active {
       -ms-flex-order: 1;
           order: 1;
   position: absolute;
-  top: 68px;
+  top: 77px;
 }
 
 .selected {
@@ -1060,7 +1060,7 @@ input:-webkit-autofill:active {
 .selected span,
 .select-box label span {
   font: 500 18px/22px "Montserrat", sans-serif;
-  color: #999999;
+  color: #999;
 }
 
 .select-box .options-container.active {
@@ -1076,12 +1076,12 @@ input:-webkit-autofill:active {
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: #EE58B6;
+  //background: #EE58B6;
   border-radius: 0 5px 5px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #525861;
+  //background: #525861;
   border-radius: 0 5px 5px 0;
 }
 

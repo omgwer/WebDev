@@ -21,7 +21,7 @@
                    placeholder="Email"
                    required>
         </label>
-        <div class="feedback-form__container">
+        <div class="feedback-form__container valid">
             <div class="select-box">
                 <div class="options-container">
                     <div class="option">

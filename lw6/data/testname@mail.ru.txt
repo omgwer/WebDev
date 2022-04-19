@@ -1,0 +1,4 @@
+user-email = testname@mail.ru
+ user-name = testname 
+user-category = prog
+ spam-approve = on
