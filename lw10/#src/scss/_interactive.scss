@@ -16,6 +16,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0, 0.8);
+  transition: all 1s;
+  opacity : 1;
 
   &:hover {
     cursor: pointer;
@@ -27,13 +29,15 @@
   z-index: 1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%) ;
   max-width: 640px;
   background-color: #fff;
   border-radius: 12px;
   padding: 0 80px;
   box-sizing: border-box;
   box-shadow: 0 16px 48px 0 rgba(60, 0, 61, 0.48);
+  transition: all 0.5s ease-out;
+  opacity: 1;
 
   &__logo {
     margin: 0 auto;
@@ -55,6 +59,18 @@
       cursor: pointer;
     }
   }
+}
+
+.hidden
+{
+  z-index: -1;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.popup.hidden
+{
+  transform: scale(0.5);
 }
 
 .feedback-form {
@@ -137,6 +153,8 @@
   //  border: 1px solid rgba(224, 14, 14, 0.62);
   //}
 }
+
+
 
 .feedback-form__container:checked {
   box-shadow: 0 0 10px 1px #ee75c1;

@@ -120,9 +120,9 @@ function initPopup() {
   const popupForm = document.querySelector('.popup');
   const overlay = document.querySelector('.overlay');
   const popupButtons = document.querySelectorAll('.js-button-join');
-  const VISUALLY_HIDDEN = 'visually-hidden';
+  const VISUALLY_HIDDEN = 'hidden';
 
-  function hiderPopup(command, evt) {
+  function hidePopup(command, evt) {
     evt.preventDefault();
     if (command) {
       popupForm.classList.add(VISUALLY_HIDDEN);
@@ -141,10 +141,18 @@ function initPopup() {
     }
   };
 
-  closedButton.addEventListener('click', hiderPopup.bind(null, 'closePopup'));
-  overlay.addEventListener('click', hiderPopup.bind(null, 'closePopup'));
+  window.onkeydown = function( event ) {
+    const key = event.key;
+    if ( key === 'Escape' ) {
+      popupForm.classList.add(VISUALLY_HIDDEN);
+      overlay.classList.add(VISUALLY_HIDDEN);
+    }
+  };
+
+  closedButton.addEventListener('click', hidePopup.bind(null, 'closePopup'));
+  overlay.addEventListener('click', hidePopup.bind(null, 'closePopup'));
   popupButtons.forEach(popupButton => {
-    popupButton.addEventListener('click', hiderPopup.bind(null, null));
+    popupButton.addEventListener('click', hidePopup.bind(null, null));
   })
 }
 
