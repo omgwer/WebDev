@@ -29,7 +29,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 640px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
   padding: 0 80px;
   box-sizing: border-box;
@@ -42,7 +42,7 @@
 
   &__content {
     text-align: center;
-    font: 500 26px/31px 'Montserrat', sanf-serif;
+    font: 500 26px/1.2 'Montserrat', sanf-serif;
     margin-bottom: 13px;
   }
 
@@ -56,7 +56,7 @@
     }
   }
 }
-//
+
 .feedback-form {
   padding: 5px;
   display: flex;
@@ -109,7 +109,7 @@
   &__submit {
     margin: 0 auto 92px;
     background-color: #000;
-    color: #ffffff;
+    color: #fff;
     font: 600 18px/22px 'Montserrat', sans-serif;
     border-radius: 5px;
     outline: none;
@@ -131,17 +131,17 @@
     color: #999;
   }
 
-  &__name:invalid,
-  &__email:invalid {
-    box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
-    border: 1px solid rgba(224, 14, 14, 0.62);
-  }
+  //&__name:invalid,
+  //&__email:invalid {
+  //  box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
+  //  border: 1px solid rgba(224, 14, 14, 0.62);
+  //}
 }
 
 .feedback-form__container:checked {
   box-shadow: 0 0 10px 1px #ee75c1;
 }
-//
+
 .main__checkbox-block {
   margin-top: 15px;
 }
@@ -233,15 +233,15 @@
   padding-top: 100px;
 
   .header__link {
-    font: 600 30px/40px 'Montserrat', sans-serif;
-    color: #000000;
+    font: 600 30px/1.2 'Montserrat', sans-serif;
+    color: #000;
   }
 
   .js-button-join {
     display: none;
   }
 }
-//
+
 .feedback-form__container {
   padding: 0 0;
   display: grid;
@@ -256,7 +256,7 @@
 .top-text-wrapper code{
   font-size: .85em;
   background: linear-gradient(90deg,#fce3ec,#ffe8cc);
-  color: #ff2200;
+  color: #f20;
   padding: .1rem .3rem .2rem;
   border-radius: .2rem;
 }
@@ -283,10 +283,10 @@
   overflow: hidden;
   border-radius: 5px;
   border: solid 1px #dcdfe5;
-  background-color: #ffffff;
+  background-color: #fff;
   order: 1;
   position: absolute;
-  top: 68px;
+  top: 77px;
 }
 
 .selected {
@@ -322,8 +322,8 @@
 }
 
 .selected span, .select-box label span {
-  font: 500 18px/22px 'Montserrat', sans-serif;
-  color: #999999;
+  font: 500 18px/1.2 'Montserrat', sans-serif;
+  color: #999;
 }
 
 .select-box .options-container.active {
@@ -337,13 +337,13 @@
 }
 
 .select-box .options-container::-webkit-scrollbar {
-  width: 8px;
-  background: #EE58B6;
+  width: 0;
+ // background: #EE58B6;
   border-radius: 0 5px 5px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #525861;
+ // background: #525861;
   border-radius: 0 5px 5px 0;
 }
 

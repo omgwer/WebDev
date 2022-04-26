@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
   setMenuScrollNavigation();
   initPopup();
   initMobileMenu();
-  validationForm();
+ // validationForm();
   customDropList();
   setAccordionBlockHide();
   smoothAccordionSlide();
@@ -132,6 +132,14 @@ function initPopup() {
       overlay.classList.remove(VISUALLY_HIDDEN);
     }
   }
+
+  window.onkeydown = function( event ) {
+    const key = event.key;
+    if ( key === 'Escape' ) {
+      popupForm.classList.add(VISUALLY_HIDDEN);
+      overlay.classList.add(VISUALLY_HIDDEN);
+    }
+  };
 
   closedButton.addEventListener('click', hiderPopup.bind(null, 'closePopup'));
   overlay.addEventListener('click', hiderPopup.bind(null, 'closePopup'));
