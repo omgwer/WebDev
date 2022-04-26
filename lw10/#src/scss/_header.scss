@@ -1,0 +1,92 @@
+.header
+{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1707px;
+  margin: 30px auto 0;
+  align-items: center;
+
+  &__logo
+  {
+    margin: 0 35px 0 24px;
+    flex-shrink: 0;
+  }
+
+  &__button-block
+  {
+    position: relative;
+    display: none;
+    width: 80px;
+    box-sizing: border-box;
+    z-index: 1;
+
+    &:hover
+    {
+      cursor: pointer;
+    }
+  }
+
+  &__button-image
+  {
+    align-items: center;
+    padding-top: 2px;
+  }
+
+  &__links
+  {
+    position: relative;
+    z-index: 1;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 815px;
+    align-items: center;
+  }
+
+  &__burger-first
+  {
+    transition-delay: 0s, 0.3s;
+  }
+
+  &__burger-third
+  {
+    transition-delay: 0s, 0.3s;
+  }
+
+  &__burger-second
+  {
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+  }
+}
+
+.header__link
+{
+  padding-top: 1px;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover
+  {
+    border-bottom: 1px solid #383838;
+  }
+
+  &_about-author
+  {
+    width: 63px;
+  }
+}
+
+.button_black
+{
+  background-color: #05090C;
+  padding: 18px 42px;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover
+  {
+    background-color: #EE58B6;
+  }
+}

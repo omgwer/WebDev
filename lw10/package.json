@@ -1,0 +1,27 @@
+{
+  "name": "ff-gulp",
+  "version": "1.0.0",
+  "description": "gulp build",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jmpr",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify-es": "latest"
+  },
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}
