@@ -30,6 +30,11 @@ input:-webkit-autofill:active
   transition: background-color 5000s ease-in-out 0s;
 }
 
+.scroll-lock
+{
+  overflow: hidden;
+}
+
 .font
 {
   &-text
@@ -66,3 +71,4 @@ input:-webkit-autofill:active
 @@include('_footer.scss')
 @@include('_interactive.scss')
 @@include('_adaptive.scss')
+@@include('_interactive_adaptive.scss')

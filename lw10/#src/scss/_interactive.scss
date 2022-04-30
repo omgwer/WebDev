@@ -123,7 +123,7 @@
   }
 
   &__submit {
-    margin: 0 auto 92px;
+    margin: 0 auto 35px;
     background-color: #000;
     color: #fff;
     font: 600 18px/22px 'Montserrat', sans-serif;
@@ -154,8 +154,6 @@
   //}
 }
 
-
-
 .feedback-form__container:checked {
   box-shadow: 0 0 10px 1px #ee75c1;
 }
@@ -166,7 +164,7 @@
 
 .checkbox-block {
   margin: 35px auto 35px;
-  text-align: center;
+  text-align: left;
 
   &__title {
     display: inline-flex;

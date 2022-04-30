@@ -115,7 +115,7 @@
   {
     &__submit
     {
-      margin-top: 25px;
+     // margin-top: 25px;
     }
 
     &__group
@@ -149,7 +149,7 @@
   .feedback-form
   {
     max-width: 500px;
-    margin: 30px auto;
+    margin: 10px auto;
 
     &__group
     {
@@ -402,7 +402,7 @@
 
     img
     {
-      transform: scale(3);
+      transform: scale(2);
     }
   }
   .popup
@@ -513,7 +513,7 @@
 
   .checkbox-block__title
   {
-    max-width: 350px;
+    //max-width: 350px;
   }
 }
 

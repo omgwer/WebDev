@@ -1,0 +1,38 @@
+@media screen and (min-height: 856px)
+{
+  .feedback-form
+  {
+    &__submit
+    {
+      margin-bottom: 92px;
+    }
+  }
+}
+
+@media screen and (width: 1024px) and (height: 768px)
+{
+  .feedback-form
+  {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &__submit
+    {
+      margin-bottom: 15px;
+    }
+  }
+
+  .popup
+  {
+    &__content
+    {
+      margin-bottom: 1px;
+    }
+
+    &__logo
+    {
+      position: relative;
+      bottom: 15px;
+    }
+  }
+}
