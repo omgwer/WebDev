@@ -11,10 +11,10 @@
 </head>
 <body>
     <div class="container">
-        @@include('_header.html')
-        @@include('_main.html')
-        @@include('_footer.html')
-        @@include('_interactive.html')
+        <?php include 'header.php' ?>
+        <?php include 'main.php' ?>
+        <?php include 'footer.php' ?>
+        <?php include 'interactive.php' ?>
     </div>
     <script src="js/script.js"></script>
 </body>

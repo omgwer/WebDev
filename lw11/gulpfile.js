@@ -4,21 +4,21 @@ let sourse_folder = '#src';
 
 let path = {
   build: {
-    html: project_folder + '/',
+    php: project_folder + '/',
     css: project_folder + '/css/',
     js: project_folder + '/js/',
     img: project_folder + '/img/',
     fonts: project_folder + '/fonts/',
   },
   src: {
-    html: [sourse_folder + '/*.html', '!' + sourse_folder + '/_*.html'],
+    php: [sourse_folder + '/*.php', '!' + sourse_folder + '/_*.php'],
     css: [sourse_folder + '/scss/*.scss', '!' + sourse_folder + '/_*.scss'],
     js: sourse_folder + '/js/script.js',
     img: sourse_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
     fonts: sourse_folder + '/fonts/*.ttf',
   },
   watch: {
-    html: sourse_folder + '/**/*.html',
+    php: sourse_folder + '/**/*.php',
     css: sourse_folder + '/scss/**/*.scss',
     js: sourse_folder + '/js/**/*.js',
     img: sourse_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
@@ -41,18 +41,20 @@ let {src,dest} = require('gulp'),
 
 function browserSync() {
   browsersync.init ({
-    server:{
-      baseDir: './' + project_folder + '/'
-    },
-    port: 3000,
+    // server :{
+    //   baseDir: './' + project_folder + '/',
+    // },
+    // startPath: "/index.php",
+    proxy: "localhost:63342/WebDev/lw11/dist/index.php",
+    //port: 3000,
     notify: false
   })
 }
 
-function html() {
-  return src(path.src.html)
+function php() {
+  return src(path.src.php)
     .pipe(fileinclude())
-    .pipe(dest(path.build.html))
+    .pipe(dest(path.build.php))
     .pipe(browsersync.stream())
 }
 
@@ -113,7 +115,7 @@ function images() {
 }
 
 function watchFiles() {
-  gulp.watch([path.watch.html],html);
+  gulp.watch([path.watch.php],php);
   gulp.watch([path.watch.css],css);
   gulp.watch([path.watch.js],js);
   gulp.watch([path.watch.img],images);
@@ -123,13 +125,13 @@ function clean() {
   return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images));
+let build = gulp.series(clean, gulp.parallel(js, css, php, images));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.images = images;
 exports.js = js;
 exports.css = css;
-exports.html = html;
+exports.php = php;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;

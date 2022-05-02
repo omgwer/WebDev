@@ -19,7 +19,7 @@
         <img class="footer__socials" src="img/footer_social.png" alt="Социальные сети автора">
     </section>
     <div class="footer__logo-container">
-        <a href="index.html">
+        <a href="index.php">
             <img src="img/footer_logo.svg" class="footer__logo" alt="logo">
         </a>
     </div>
