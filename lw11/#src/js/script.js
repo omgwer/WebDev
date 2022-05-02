@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
     setMenuScrollNavigation();
     initPopup();
     initMobileMenu();
-    // validationForm();
+    validationForm();
     customDropList();
     setAccordionBlockHide();
     smoothAccordionSlide();
@@ -123,7 +123,6 @@ function initPopup() {
     const overlay = document.querySelector('.overlay');
     const popupButtons = document.querySelectorAll('.js-button-join');
     const body = document.querySelector('body');
-    console.log(body);
     const VISUALLY_HIDDEN = 'hidden';
     const SCROLL_LOCK = 'scroll-lock';
 
@@ -176,13 +175,46 @@ function setInteractiveParameters() {
 }
 
 function validationForm() {
-    const feedbackProffession = document.querySelector('.feedback-form__container');
-    const optionList = feedbackProffession.querySelectorAll('.option');
-    optionList.forEach(option => {
-        option.addEventListener('click', evt => {
-            feedbackProffession.classList.add('valid');
-        })
-    })
+    const inputName = document.querySelector('.feedback-form__name');
+    const inputEmail = document.querySelector('.feedback-form__email');
+    const submitButton = document.querySelector('.feedback-form__submit');
+
+    submitButton.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        let validationProfession = validateProfession();
+        let validationEmail = validateEmail();
+        let validationName = validateName();
+
+        if (validationProfession && validationEmail && validationName)
+        {
+            //send post request
+        }
+    });
+
+    function validateEmail()
+    {
+        let regexp = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
+        let result = regexp.test(inputEmail.value);
+        result ? inputEmail.classList.remove('invalid') :  inputEmail.classList.add('invalid');
+        return result;
+    }
+
+    function validateName()
+    {
+        let regexp= new RegExp("^[A-Za-zА-Яа-яЁё\s]+$");
+        let result = regexp.test(inputName.value);
+        result ? inputName.classList.remove('invalid') :  inputName.classList.add('invalid');
+        return result;
+    }
+
+    function validateProfession()
+    {
+        const selectBox = document.querySelector('.select-box');
+        const selectedProfession = document.querySelector('.selected span');
+        let result = selectedProfession.innerHTML === 'Вид деятельности';
+        result ? selectBox.classList.remove('valid') : selectBox.classList.add('valid');
+        return result;
+    }
 }
 
 function customDropList() {
@@ -198,6 +230,17 @@ function customDropList() {
         option.addEventListener("click", () => {
             selected.innerHTML = option.querySelector("label").innerHTML;
             optionsContainer.classList.remove("active");
+            setTimeout(() => {
+                optionsList.forEach(option => {
+                    option.classList.remove('selected-option');
+                })
+                option.classList.add('selected-option')
+            }, 500);
         });
     });
+}
+
+async function sendRequest(url, options)
+{
+
 }

@@ -129,6 +129,7 @@
     font: 600 18px/22px 'Montserrat', sans-serif;
     border-radius: 5px;
     outline: none;
+    border: none;
 
     &:hover {
       background-color: #EE58B6;
@@ -146,12 +147,6 @@
     font: 500 18px/1.2 'Montserrat', sans-serif;
     color: #999;
   }
-
-  //&__name:invalid,
-  //&__email:invalid {
-  //  box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
-  //  border: 1px solid rgba(224, 14, 14, 0.62);
-  //}
 }
 
 .feedback-form__container:checked {
@@ -384,4 +379,23 @@
 
 .select-box .option .radio {
   display: none;
+}
+
+.selected-option
+{
+  &:before
+  {
+    content: '';
+    background: url("../img/option-checkbox.svg") no-repeat;
+    position: absolute;
+    width: 23px;
+    height: 19px;
+    right: 15px;
+  }
+}
+
+.invalid
+{
+  box-shadow: 0 0 5px 1px rgba(239, 7, 15, 0.25);
+  border: 1px solid rgba(224, 14, 14, 0.62);
 }
