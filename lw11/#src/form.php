@@ -1,4 +1,4 @@
-<form id="validate" method="post" action="" class="feedback-form feedback-block__feedback-form">
+<form id="validate" class="feedback-form feedback-block__feedback-form">
     <div class="feedback-form__fieldspace">
         <label class="feedback-form__group">
             <input class="feedback-form__name"

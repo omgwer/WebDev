@@ -39,6 +39,19 @@
   transition: all 0.5s ease-out;
   opacity: 1;
 
+  &__error-message
+  {
+    position: absolute;
+    font-size: 26px;
+    white-space: normal;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 1;
+    top: 37%;
+    left: 33px;
+    max-width: 250px;
+  }
+
   &__logo {
     margin: 0 auto;
     display: block;
@@ -80,6 +93,7 @@
   max-width: 640px;
   box-sizing: border-box;
   justify-content: space-between;
+  position: relative;
 
   &__job-block {
     vertical-align: middle;

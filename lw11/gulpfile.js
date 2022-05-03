@@ -9,13 +9,15 @@ let path = {
     js: project_folder + '/js/',
     img: project_folder + '/img/',
     fonts: project_folder + '/fonts/',
+    data: project_folder + '/data/',
   },
   src: {
     php: [sourse_folder + '/*.php', '!' + sourse_folder + '/_*.php'],
     css: [sourse_folder + '/scss/*.scss', '!' + sourse_folder + '/_*.scss'],
-    js: sourse_folder + '/js/script.js',
+    js: sourse_folder + '/js/*.js',
     img: sourse_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
     fonts: sourse_folder + '/fonts/*.ttf',
+    data: sourse_folder + '/data/*',
   },
   watch: {
     php: sourse_folder + '/**/*.php',
@@ -23,7 +25,8 @@ let path = {
     js: sourse_folder + '/js/**/*.js',
     img: sourse_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
-  clean: './' + project_folder + '/'
+ // clean: './' + project_folder + '/',
+  clean: ['./' + project_folder + '/', '!' + './' + project_folder + '/data']
 }
 
 let {src,dest} = require('gulp'),
@@ -49,6 +52,12 @@ function browserSync() {
     //port: 3000,
     notify: false
   })
+}
+
+function data() {
+  return src(path.src.data)
+      .pipe(fileinclude())
+      .pipe(dest(path.build.data))
 }
 
 function php() {
@@ -125,13 +134,14 @@ function clean() {
   return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, php, images));
+let build = gulp.series(clean, gulp.parallel(js, css, php, images, data));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.images = images;
 exports.js = js;
 exports.css = css;
 exports.php = php;
+exports.data = data;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
