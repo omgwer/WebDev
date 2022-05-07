@@ -126,7 +126,7 @@ function initPopup() {
     const VISUALLY_HIDDEN = 'hidden';
     const SCROLL_LOCK = 'scroll-lock';
 
-    function hidePopup(command, evt) {
+    function togglePopup(command, evt) {
         evt.preventDefault();
         if (command) {
             setDefaultPopup();
@@ -150,10 +150,10 @@ function initPopup() {
         }
     };
 
-    closedButton.addEventListener('click', hidePopup.bind(null, 'closePopup'));
-    overlay.addEventListener('click', hidePopup.bind(null, 'closePopup'));
+    closedButton.addEventListener('click', togglePopup.bind(null, 'closePopup'));
+    overlay.addEventListener('click', togglePopup.bind(null, 'closePopup'));
     popupButtons.forEach(popupButton => {
-        popupButton.addEventListener('click', hidePopup.bind(null, null));
+        popupButton.addEventListener('click', togglePopup.bind(null, null));
     })
 }
 
@@ -284,7 +284,6 @@ async function sendPostRequest(url, newUser) {
         const form = document.getElementById('validate');
         const popupLogo = document.querySelector('.popup__logo');
         const popupContent = document.querySelector('.popup__content');
-        const popup = document.querySelector('.popup');
         const errorMessage = document.querySelector('.popup__error-message');
         form.style.opacity = '0';
         popupLogo.style.opacity = '0';

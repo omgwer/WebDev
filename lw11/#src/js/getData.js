@@ -2,8 +2,7 @@ window.addEventListener('load', function () {
     getData();
 });
 
-function getData()
-{
+function getData() {
     const getDataButton = document.getElementById('getDataButton');
     const dataContainer = document.getElementById('dataContainer');
 
@@ -13,32 +12,26 @@ function getData()
     })
 }
 
-async function sendGetRequest()
-{
+async function sendGetRequest() {
     const url = '/WebDev/lw11/dist/printData.php';
     let response = await fetch(url);
     if (response.ok) {
         return await response.json();
-    } else
-    {
+    } else {
         console.log('Error' + response.status + ' ' + response.statusText);
     }
 }
 
-async function addElementsForUI()
-{
+async function addElementsForUI() {
     let responseJson = await sendGetRequest();
-    if ('errorMessage' in responseJson)
-    {
+    if ('errorMessage' in responseJson) {
         noSuchElements();
-    } else
-    {
+    } else {
         responseJson.forEach(element => addElement(element));
     }
 }
 
-function addElement(elementData)
-{
+function addElement(elementData) {
     const dataContainer = document.getElementById('dataContainer');
     let element = document.createElement('div');
     let name = document.createElement('div');
@@ -62,8 +55,7 @@ function addElement(elementData)
     dataContainer.append(element);
 }
 
-function noSuchElements()
-{
+function noSuchElements() {
     const dataContainer = document.getElementById('dataContainer');
     let element = document.createElement('div');
     element.innerHTML = 'Элементов не найдено';
