@@ -7,7 +7,7 @@ $userName = getPostParameter('userName');
 $userEmail = getPostParameter('userEmail');
 $category = getPostParameter('category');
 $spamApprove = getPostParameter('spamApprove');
-validationInputData($userName, $userEmail, $category, $spamApprove);
+validationInputData($userName, $userEmail, $category);
 writeToFile($userEmail, $data);
 
 function getPostParameter(string $name): string
@@ -15,24 +15,23 @@ function getPostParameter(string $name): string
     return isset($_POST[$name]) ? (string)$_POST[$name] : '';
 }
 
-function validationInputData($userName, $userEmail, $category, $spamApprove)
+function validationInputData($userName, $userEmail, $category)
 {
-    $errorMessage = '';
-    if ($userName == '' || $userName == 'badName') {$errorMessage = $errorMessage . ' userName undefined';}
-    if ($userEmail == '' || $userEmail == 'badEmail@mail.ru') {$errorMessage = $errorMessage . ' userEmail undefined';}
-    if ($category == '') {$errorMessage = $errorMessage . ' userCategory undefined';}
-    if ($errorMessage != '')
+    $errorMessage = [];
+    if ($userName == '' || $userName == 'badName') {$errorMessage['Name'] = $userName . ' Name is undefined';}
+    if ($userEmail == '' || $userEmail == 'badEmail@mail.ru')  {$errorMessage['Email'] = $userEmail . ' Email is undefined';}
+    if ($category == '') {$errorMessage['Category'] = $category . ' Category is undefined';}
+    if ($errorMessage != [])
     {
         badRequest($errorMessage);
     }
 }
 
-function badRequest(string $errorMessage)
+function badRequest(array $errorMessage)
 {
-    $data = array('type' => 'error', 'message' => 'BadRequestTest! ' . $errorMessage);
     header('HTTP/1.1 400 BadRequest');
     header('Content-Type: application/json; charset=UTF-8');
-    die(json_encode($data));
+    die(json_encode($errorMessage));
 }
 
 function writeToFile($userEmail, $data) {

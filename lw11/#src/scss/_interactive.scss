@@ -122,6 +122,9 @@
 
   &__name,
   &__email {
+    font: 500 18px/1.2 Montserrat,sanf-serif;
+    color: #999;
+
     &:hover {
       cursor: text;
     }

@@ -126,19 +126,18 @@ function initPopup() {
     const VISUALLY_HIDDEN = 'hidden';
     const SCROLL_LOCK = 'scroll-lock';
 
-    function togglePopup(command, evt) {
-        evt.preventDefault();
-        if (command) {
-            setDefaultPopup();
-            popupForm.classList.add(VISUALLY_HIDDEN);
-            overlay.classList.add(VISUALLY_HIDDEN);
-            body.classList.remove(SCROLL_LOCK);
-        } else {
-            setDefaultPopup();
-            popupForm.classList.remove(VISUALLY_HIDDEN);
-            overlay.classList.remove(VISUALLY_HIDDEN);
-            body.classList.add(SCROLL_LOCK);
-        }
+    function openPopup() {
+        setDefaultPopup();
+        popupForm.classList.remove(VISUALLY_HIDDEN);
+        overlay.classList.remove(VISUALLY_HIDDEN);
+        body.classList.add(SCROLL_LOCK);
+    }
+
+    function closePopup() {
+        setDefaultPopup();
+        popupForm.classList.add(VISUALLY_HIDDEN);
+        overlay.classList.add(VISUALLY_HIDDEN);
+        body.classList.remove(SCROLL_LOCK);
     }
 
     window.onkeydown = function (event) {
@@ -150,10 +149,10 @@ function initPopup() {
         }
     };
 
-    closedButton.addEventListener('click', togglePopup.bind(null, 'closePopup'));
-    overlay.addEventListener('click', togglePopup.bind(null, 'closePopup'));
+    closedButton.addEventListener('click', () => closePopup());
+    overlay.addEventListener('click', () => closePopup());
     popupButtons.forEach(popupButton => {
-        popupButton.addEventListener('click', togglePopup.bind(null, null));
+        popupButton.addEventListener('click', () => openPopup());
     })
 }
 
@@ -281,7 +280,7 @@ async function sendPostRequest(url, newUser) {
     }
 
     function errorRequest() {
-        const form = document.getElementById('validate');
+        const form = document.getElementById('joinCourseForm');
         const popupLogo = document.querySelector('.popup__logo');
         const popupContent = document.querySelector('.popup__content');
         const errorMessage = document.querySelector('.popup__error-message');
@@ -293,7 +292,7 @@ async function sendPostRequest(url, newUser) {
 }
 
 function setDefaultPopup() {
-    const form = document.getElementById('validate');
+    const form = document.getElementById('joinCourseForm');
     const popupLogo = document.querySelector('.popup__logo');
     const popupContent = document.querySelector('.popup__content');
     const inputName = document.querySelector('.feedback-form__name');
@@ -302,11 +301,17 @@ function setDefaultPopup() {
     const errorMessage = document.querySelector('.popup__error-message');
     const spamApproveCheckbox = document.getElementById('button');
     const optionsList = document.querySelectorAll(".option");
+    const optionsContainer = document.querySelector(".options-container");
+    const selectBox = document.querySelector('.select-box');
 
     optionsList.forEach(option => {
         option.classList.remove('selected-option');
     })
 
+    selectBox.classList.add('valid');
+    optionsContainer.classList.remove("active");
+    inputName.classList.remove("invalid");
+    inputEmail.classList.remove("invalid");
     selectedProfession.innerHTML = 'Вид деятельности';
     spamApproveCheckbox.checked = false;
     inputName.value = '';

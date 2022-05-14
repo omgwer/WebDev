@@ -18,6 +18,7 @@ async function sendGetRequest() {
     if (response.ok) {
         return await response.json();
     } else {
+        serverError();
         console.log('Error' + response.status + ' ' + response.statusText);
     }
 }
@@ -59,5 +60,12 @@ function noSuchElements() {
     const dataContainer = document.getElementById('dataContainer');
     let element = document.createElement('div');
     element.innerHTML = 'Элементов не найдено';
+    dataContainer.append(element);
+}
+
+function serverError() {
+    const dataContainer = document.getElementById('dataContainer');
+    let element = document.createElement('div');
+    element.innerHTML = 'Ошибка сервера, данные не найдены';
     dataContainer.append(element);
 }
