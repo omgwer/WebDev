@@ -1,30 +1,31 @@
-CREATE DATABASE university;
-use university;
+SET CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS university;
+USE university;
 --create tables
-CREATE TABLE faculty
+CREATE TABLE IF NOT EXISTS faculty
 (
     id INT AUTO_INCREMENT NOT NULL,
     faculty_name VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE student_groups
+CREATE TABLE IF NOT EXISTS student_group
 (
     id INT AUTO_INCREMENT NOT NULL,
     group_name VARCHAR(255) NOT NULL,
-    facultyId INT,
-    FOREIGN KEY (facultyId) REFERENCES faculty(id),
+    faculty_id INT,
+    FOREIGN KEY (faculty_id) REFERENCES faculty(id),
     PRIMARY KEY (id)
 );
 
-CREATE TABLE students
+CREATE TABLE IF NOT EXISTS student
 (
     id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     age INT NOT NULL,
-    groupId INT,
-    FOREIGN KEY (groupId) REFERENCES student_groups(id),
+    group_id INT,
+    FOREIGN KEY (group_id) REFERENCES student_group(id),
     PRIMARY KEY (id)
 );
 -- init data
@@ -36,7 +37,7 @@ VALUES
    ('Slytherin');
 
 INSERT INTO
-    student_groups(group_name, facultyid)
+    student_group(group_name, faculty_id)
 VALUES
     ('Phoenix order', 1),
     ('Dumbledore team', 1),
@@ -49,7 +50,7 @@ VALUES
     ('Student IPS', 3);
 
 INSERT INTO
-    students(first_name, last_name, age, groupId)
+    student(first_name, last_name, age, group_id)
 VALUES
     ('Alexandr', 'Kislitsyn', 29, 1),
     ('Efim', 'Efimov', 5, 1),
@@ -97,61 +98,38 @@ VALUES
     ('Alexandr', 'Makarenko', 6, 9),
     ('Ivan', 'Grozny', 19, 9);
 
-
 -- search query
--- search all students of age = 19
+-- search all student of age = 19
 SELECT
-       first_name, last_name, age, group_name, faculty_name
+    first_name,
+    last_name, age, group_name, faculty_name
 FROM
-    students
-LEFT JOIN
-         student_groups
-ON
-    students.groupId = student_groups.id
-LEFT JOIN
-         faculty
-ON
-    student_groups.facultyId = faculty.id
-WHERE age = 19;
+    student AS s
+    LEFT JOIN student_group AS sg ON s.group_id = sg.id
+    LEFT JOIN faculty AS f ON sg.faculty_id = f.id
+WHERE
+    age = 19;
 
--- get all students of selected group
+-- get all student of selected group
 SELECT first_name, last_name, age, group_name, faculty_name
 FROM
-    students
-        LEFT JOIN
-    student_groups
-    ON
-            students.groupId = student_groups.id
-        LEFT JOIN
-    faculty
-    ON
-            student_groups.facultyId = faculty.id
-WHERE group_name = 'Dumbledore team';
+    student AS s
+    LEFT JOIN student_group AS sg ON s.group_id = sg.id
+    LEFT JOIN faculty AS f ON sg.faculty_id = f.id
+    WHERE group_name = 'Dumbledore team';
 
--- get all students of selected faculty
+-- get all student of selected faculty
 SELECT first_name, last_name, age, group_name, faculty_name
 FROM
-    students
-        LEFT JOIN
-    student_groups
-    ON
-            students.groupId = student_groups.id
-        LEFT JOIN
-    faculty
-    ON
-            student_groups.facultyId = faculty.id
+    student AS s
+    LEFT JOIN student_group AS sg ON s.group_id = sg.id
+    LEFT JOIN faculty AS f ON sg.faculty_id = f.id
 WHERE faculty_name = 'Slytherin';
 
 -- get student info of selected student
 SELECT first_name, last_name, age, group_name, faculty_name
 FROM
-    students
-        LEFT JOIN
-    student_groups
-    ON
-            students.groupId = student_groups.id
-        LEFT JOIN
-    faculty
-    ON
-            student_groups.facultyId = faculty.id
+    student AS s
+    LEFT JOIN student_group AS sg ON s.group_id = sg.id
+    LEFT JOIN faculty AS f ON sg.faculty_id = f.id
 WHERE first_name = 'Alexandr' AND last_name = 'Kislitsyn';

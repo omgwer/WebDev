@@ -18,11 +18,16 @@ function getPostParameter(string $name): string
 function validationInputData($userName, $userEmail, $category)
 {
     $errorMessage = [];
-    if ($userName == '' || $userName == 'badName') {$errorMessage['Name'] = $userName . ' Name is undefined';}
-    if ($userEmail == '' || $userEmail == 'badEmail@mail.ru')  {$errorMessage['Email'] = $userEmail . ' Email is undefined';}
-    if ($category == '') {$errorMessage['Category'] = $category . ' Category is undefined';}
-    if ($errorMessage != [])
-    {
+    if ($userName == '' || $userName == 'badName') {
+        $errorMessage['Name'] = $userName . ' Name is undefined';
+    }
+    if ($userEmail == '' || $userEmail == 'badEmail@mail.ru')  {
+        $errorMessage['Email'] = $userEmail . ' Email is undefined';
+    }
+    if ($category == '') {
+        $errorMessage['Category'] = $category . ' Category is undefined';
+    }
+    if ($errorMessage != []) {
         badRequest($errorMessage);
     }
 }
