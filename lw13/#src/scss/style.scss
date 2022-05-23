@@ -1,0 +1,75 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container
+{
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.visually-hidden
+{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  opacity: 0;
+  transition: all 5s;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.scroll-lock
+{
+  overflow: hidden;
+}
+
+.font
+{
+  &-text
+  {
+    &__large
+    {
+      font: 500 26px/1.3 'Montserrat', sans-serif;
+      color: #000;
+    }
+
+    &__normal
+    {
+      font: 400 18px/1.3 'Roboto Condensed', sans-serif;
+      color: #000;
+    }
+
+    &__small
+    {
+      font: 500 16px/1.2 'Montserrat', sans-serif;
+      color: #000;
+
+      &_white
+      {
+        font: 500 16px/1.2 'Montserrat', sans-serif;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@@include('_animation.scss')
+@@include('_header.scss')
+@@include('_main.scss')
+@@include('_footer.scss')
+@@include('_interactive.scss')
+@@include('_adaptive.scss')
+@@include('_interactive_adaptive.scss')
+@@include('_data.scss')

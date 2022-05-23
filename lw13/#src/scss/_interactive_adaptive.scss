@@ -1,0 +1,108 @@
+@media screen and (min-height: 856px)
+{
+  .feedback-form
+  {
+    &__submit
+    {
+      margin-bottom: 92px;
+    }
+  }
+}
+
+@media screen and (width: 1024px) and (height: 768px)
+{
+  .feedback-form
+  {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &__submit
+    {
+      margin-bottom: 15px;
+    }
+  }
+
+  .popup
+  {
+    &__content
+    {
+      margin-bottom: 1px;
+    }
+
+    &__logo
+    {
+      position: relative;
+      bottom: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 321px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      left: 15vw;
+    }
+  }
+}
+
+@media screen and (min-width: 375px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      left: 6vw;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (min-width: 424px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      left: 10vw;
+    }
+  }
+}
+
+@media screen and (min-width: 473px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      left: 14vw;
+    }
+  }
+}
+
+@media screen and (min-width: 540px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 640px)
+{
+  .popup
+  {
+    &__error-message
+    {
+      white-space: nowrap;
+      font-size: 36px;
+      left: 12%;
+      top: 37%;
+    }
+  }
+}
