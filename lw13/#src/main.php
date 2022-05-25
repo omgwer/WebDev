@@ -96,7 +96,7 @@
             <div class="faq__accordion">
                 <button class="faq__button">
                     <span>Как проходит курс?</span>
-                    <img class="faq__arrow rotate" src="img/faq_cross.png" alt="крестик" loading="lazy">
+                    <img class="faq__arrow rotate" src="img/faq_cross.png" alt="крестик" loading>
                 </button>
                 <div class="faq__accordion_hide active">
                     <p>
