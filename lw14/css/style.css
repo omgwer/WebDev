@@ -1,0 +1,12 @@
+body
+{
+    max-width: 500px;
+    margin: 500px auto;
+}
+
+img
+{
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
