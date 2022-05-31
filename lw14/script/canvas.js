@@ -25,7 +25,7 @@ window.onload = () => {
 	context.bezierCurveTo(100, 330, 100, 330, 167, 318);
 	context.lineTo(180, 296);
 	context.bezierCurveTo(176, 270, 176, 270, 150 + startPosX, 230 + startPosY);
-	//context.arc(100, 200, 60, 0, 2* Math.PI);
+	context.arc(100, 200, 60, 0, 2* Math.PI);
 	context.fill();
 
 	//Воротник
@@ -206,5 +206,4 @@ window.onload = () => {
 	context.lineTo(120 + startPosX, 132 + startPosY);
 	context.strokeStyle = "#000000";
 	context.stroke();
-
 }
