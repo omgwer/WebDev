@@ -12,3 +12,10 @@ img
     top: 0;
     left: 20px;
 }
+
+.svg_first
+{
+    position: relative;
+  transform: scale(1.4);
+  bottom: 5px;
+}
