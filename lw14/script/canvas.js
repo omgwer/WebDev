@@ -1,5 +1,5 @@
 window.onload = () => {
-    const canvas = document.getElementById('myCanvas');
+    const canvas = document.getElementById('oneGuy');
     const context = canvas.getContext('2d');
     context.beginPath();
 
@@ -13,7 +13,6 @@ window.onload = () => {
 	context.fillStyle = "#3e77c8";
 	context.fillRect(30 + startPosX, 245 + startPosY, sizeOfSheetX, sizeOfSheetY);
 
-
 	//Куртка
 	context.beginPath();
 	context.fillStyle = "#d47062";
@@ -25,16 +24,59 @@ window.onload = () => {
 	context.bezierCurveTo(100, 330, 100, 330, 167, 318);
 	context.lineTo(180, 296);
 	context.bezierCurveTo(176, 270, 176, 270, 150 + startPosX, 230 + startPosY);
-	context.arc(100, 200, 60, 0, 2* Math.PI);
 	context.fill();
 
-	//Воротник
+	//Воротник левый
 	context.beginPath();
 	context.fillStyle = "#ff2f4c";
 	context.moveTo(30 + startPosX, 230 + startPosY);
-	context.bezierCurveTo(80, 285,120, 280, 90, 230);
+	context.bezierCurveTo(80, 285,120, 280, 83 + startPosX, 222 + startPosY);
 	context.stroke();
 	context.fill();
+
+	//Воротник правый
+	context.beginPath();
+	context.fillStyle = "#ff2f4c";
+	context.moveTo(150 + startPosX, 230 + startPosY);
+	context.bezierCurveTo(165, 260,90, 290, 95 + startPosX, 250 + startPosY);
+	context.stroke();
+	context.fill();
+
+	//Застежка на куртке
+	context.beginPath();
+	context.strokeStyle = "black";
+	context.moveTo(93 + startPosX, 250 + startPosY);
+	context.lineTo(90 + startPosX, 320 + startPosY);
+	context.stroke();
+
+	//Пуговицы
+	context.beginPath();
+	context.fillStyle = "#000000";
+	//Верхняя
+	context.arc(84 + startPosX, 268 + startPosY, 2, 0, 2 * Math.PI);
+	context.fill();
+	context.beginPath();
+	//Средняя
+	context.arc(83 + startPosX, 287 + startPosY, 2, 0, 2 * Math.PI);
+	context.fill();
+	//нижняя
+	context.beginPath();
+	context.arc(83 + startPosX, 307 + startPosY, 2, 0, 2 * Math.PI);
+	context.fill();
+
+	//Черная линия левой руки
+	context.beginPath();
+	context.strokeStyle = "black";
+	context.moveTo(34 + startPosX, 267 + startPosY);
+	context.lineTo(28 + startPosX, 290 + startPosY);
+	context.stroke();
+
+	//Черная линия правой руки
+	context.beginPath();
+	context.strokeStyle = "black";
+	context.moveTo(145 + startPosX, 267 + startPosY);
+	context.lineTo(149 + startPosX, 290 + startPosY);
+	context.stroke();
 
 	//Левая варежка
 	context.beginPath();
@@ -78,14 +120,12 @@ window.onload = () => {
 	context.beginPath();
 	
 	//Левый глаз
-	//context.moveTo(80, 100);
 	context.ellipse(65 + startPosX, 172 + startPosY, 24, 30, Math.PI / 4, 0, 2 * Math.PI);
 	context.fillStyle = "#ffffff"
 	context.fill();
 	context.beginPath();
 	
 	//Правый глаз
-	//context.moveTo(110, 100);
 	context.ellipse(115 + startPosX, 172 + startPosY, 24, 30, 3 *Math.PI / 4, 0, 2 * Math.PI);
 	context.fillStyle = "#ffffff"
 	context.fill();
@@ -116,8 +156,7 @@ window.onload = () => {
 	context.lineTo(81 + startPosX, 226 + startPosY);
 	context.lineTo(83 + startPosX, 220 + startPosY);
 	context.fill();
-	//context.fillRect(72, 220, 12, 5);
-	
+
 	//зуб 2
 	context.moveTo(85 + startPosX, 220 + startPosY);
 	context.lineTo(85 + startPosX, 226 + startPosY);
@@ -145,7 +184,7 @@ window.onload = () => {
 	context.ellipse(90 + startPosX, 150 + startPosY, 90, 90, Math.PI, 0.1, 3);
 	context.fill();
 	
-	//коёмка шапки
+	//край шапки
 	context.beginPath();
 	context.fillStyle = "#ff1f42"
 	context.moveTo(0 + startPosX, 140 + startPosY);
@@ -154,13 +193,11 @@ window.onload = () => {
 	context.bezierCurveTo(80 + (startPosX),135  + (startPosY), 80  + (startPosX), 137 + (startPosY), 0 + startPosX - 2, 157 + startPosY );
 	context.lineTo(3, 140 + startPosY);
 	context.fill();
-	//context..ellipse(86, 140, 98, 15, Math.PI, 0, Math.PI);
-
-	//context.fill();
 	
 	//помпошка
 	context.beginPath();
 	context.strokeStyle = "#ff1f42"
+	context.lineWidth = 3;
 	context.moveTo(78 + startPosX, 47 + startPosY);
 	context.lineTo(82 + startPosX, 87 + startPosY);
 	context.stroke();
@@ -185,12 +222,12 @@ window.onload = () => {
 	context.lineTo(100 + startPosX, 68 + startPosY);
 	context.stroke();
 
-	context.moveTo(60 + startPosX, 75 + startPosY);
+	context.moveTo(60 + startPosX, 77 + startPosY);
 	context.lineTo(100 + startPosX, 57 + startPosY);
 	context.stroke();
 
 	context.moveTo(66 + startPosX, 85 + startPosY);
-	context.lineTo(94 + startPosX, 54 + startPosY);
+	context.lineTo(94 + startPosX, 52 + startPosY);
 	context.stroke();
 
 	//Левая бровь
